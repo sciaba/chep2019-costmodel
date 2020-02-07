@@ -1,25 +1,27 @@
 \section{Software performance}
 Characterization of software performance is a complex problem, that
 can be approached from different points of view. While software
-developers are most concerned on understanding which parts of the code
-need optimizing, from the point of view of the computing
-infrastructure manager it is mainly a question of measuring what is
-needed to run effectively the experiment workloads. In this case, the
-application software is to be considered, at a first approximation,
-like a ``black box'', and tools like PrMon (which relies on the Linux
-kernel to extract CPU time, memory, I/O and network metrics for a
-given process tree)~\cite{prmon} or Trident (which gives access to
-detailed information on the CPU utilization at the node level using
-hardware counters)~\cite{trident} are extremely effective in producing
-metrics that can be used for infrastructure planning, for benchmarking
-and for understanding inefficiencies.
+developers are most concerned with understanding which parts of the
+code need optimizing, for the computing infrastructure manager it is
+mainly a question of measuring what is needed to run effectively the
+experiment workloads. In this case, the application software is to be
+considered, at a first approximation, as a ``black box'', and tools
+like PrMon (which relies on the Linux kernel to extract CPU time,
+memory, I/O and network metrics for a given process tree)~\cite{prmon}
+or Trident (which gives access to detailed information on the CPU
+utilization at the node level using hardware counters)~\cite{trident}
+are extremely effective in producing metrics that can be used for
+infrastructure planning, for benchmarking and for understanding
+inefficiencies. As an example, Trident was used to quantify how much
+the experiment workload are similar, or dissimilar, to a given
+benchmark application, in how they use a CPU~\cite{bench}.
 
 A set of reference workloads from each LHC experiment was analyzed
-with PrMon, and the resulting values for the metric are summarized in
+with PrMon, and the resulting values for the metrics are summarized in
 table~\ref{table:prmon}. The metrics include: number of threads or
-processes ($N_{thr/proc}$), CPU efficiency ($\epsilon_{CPU}$), time per
-event ($T_{evt}$), memory per core ($M_c$), read rate per core ($R_c$)
-and write rate per core ($W_c$).
+processes ($N_{thr/proc}$), CPU efficiency ($\epsilon_{CPU}$), time
+per event ($T_{evt}$), memory per core ($M_c$), read rate per core
+($R_c$) and write rate per core ($W_c$).
 
 \begin{table}
 \centering
@@ -43,16 +45,25 @@ looked into ways to parametrize the time series using a minimal set of
 parameters. A technique based on CPOP (Continuous piecewise linear
 Pruned Optimal Partitioning)~\cite{cpop} is able to detect
 changepoints and therefore reduce a time series to a very small number
-of points. Another work looked into the effect of varying limitations
-of system resources (memory, network bandwidth and network latency) on
-the reference workloads, in particular on their wall-clock time. It is
-planned to combine the two anlyses and study the results of the
-parametrisation as functions of the resource restrictions; this would
-allow to have a very simple input to a future model of large scale
-workloads running on a computing infrastructure, like a general
-purpose batch cluster or an HPC resource.
+of points (figure~\ref{fig:timeseries}). Another work looked into the
+effect of varying limitations of system resources (memory, network
+bandwidth and network latency) on the reference workloads, in
+particular on their wall-clock time. It is planned to combine the two
+analyses and study the results of the CPOP-based parametrization as
+functions of the resource restrictions; this would allow to have a
+very simple input to a future model of large scale workloads running
+on a computing infrastructure, like a general purpose batch cluster or
+an HPC resource.
 
-Studies on the effect of compiler versions and optimisations were done
+\begin{figure}[t]
+  \centering
+  \includegraphics[height=8cm]{timeseries.png}
+  \caption{Value of PSS vs. time for an ATLAS digi-reco job when the
+    system memory is restricted to 4 GB}
+  \label{fig:timeseries}
+\end{figure}
+
+Studies on the effect of compiler versions and optimizations were done
 using Geant4 simulation, which showed that statically compiling
 libraries may achieve a 10\% speedup with respect to dynamically
 compiled libraries, and switching from gcc 4.8.5 to 8.2.0 resulted in

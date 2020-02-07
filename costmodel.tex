@@ -1,0 +1,113 @@
+%%%%%%%%%%%%%%%%%%%%%%% file template.tex %%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% This is a template file for Web of Conferences Journal
+%
+% Copy it to a new file with a new name and use it as the basis
+% for your article
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%% EDP Science %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%%%\documentclass[option]{webofc}
+%%% "twocolumn" for typesetting an article in two columns format (default one column)
+%
+\documentclass{webofc}
+\usepackage[varg]{txfonts}   % Web of Conferences font
+%
+% Put here some packages required or/and some personnal commands
+%
+%
+\begin{document}
+%
+\title{New developments in cost modeling for the LHC computing}
+%
+% subtitle is optionnal
+%
+%%%\subtitle{Do you have a subtitle?\\ If so, write it here}
+
+\author{\firstname{Catherine} \lastname{Biscarat}\inst{1} \and
+        \firstname{Tommaso} \lastname{Boccali}\inst{2} \and
+        \firstname{Daniele} \lastname{Bonacorsi}\inst{3} \and
+        \firstname{Concezio} \lastname{Bozzi}\inst{4,5} \and
+        \firstname{Davide} \lastname{Costanzo}\inst{6} \and
+        \firstname{Dirk} \lastname{Duellmann}\inst{4} \and
+        \firstname{Johannes} \lastname{Elmsheuser}\inst{7} \and
+        \firstname{Eric} \lastname{Fede}\inst{8} \and
+        \firstname{José} \lastname{Flix Molina}\inst{9} \and
+        \firstname{Domenico} \lastname{Giordano}\inst{4} \and
+        \firstname{Costin} \lastname{Grigoras}\inst{4} \and
+        \firstname{Jan} \lastname{Iven}\inst{4} \and
+        \firstname{Michel} \lastname{Jouvin}\inst{10} \and
+        \firstname{Yves} \lastname{Kemp}\inst{11} \and
+        \firstname{David} \lastname{Lange}\inst{12} \and
+        \firstname{Helge} \lastname{Meinhard}\inst{4} \and
+        \firstname{Michele} \lastname{Michelotto}\inst{13} \and
+        \firstname{Gareth Douglas} \lastname{Roy}\inst{14} \and
+        \firstname{Andrew} \lastname{Sansum}\inst{15} \and
+        \firstname{Andrea} \lastname{Sartirana}\inst{16} \and
+        \firstname{Markus} \lastname{Schulz}\inst{4} \and
+        \firstname{Andrea} \lastname{Sciab\`a}\inst{4}\thanks{\email{Andrea.Sciaba@cern.ch}} \and
+        \firstname{Oxana} \lastname{Smirnova}\inst{17} \and
+        \firstname{Graeme} \lastname{Stewart}\inst{4} \and
+        \firstname{Andrea} \lastname{Valassi}\inst{4} \and
+        \firstname{Renaud} \lastname{Vernet}\inst{8} \and
+        \firstname{Torre} \lastname{Wenaus}\inst{7} \and
+        \firstname{Frank} \lastname{Wuerthwein}\inst{18}
+}
+
+\institute{Univ. Grenoble Alpes, CNRS, Grenoble INP, LPSC-IN2P3, Grenoble, France\and
+           INFN Sezione di Pisa, Pisa, Italy \and
+           INFN Sezione di Bologna, Universit\`a di Bologna, Bologna, Italy \and
+           European Organisation for Nuclear Research (CERN), Geneva, Switzerland \and
+           Universit\`a e INFN, Ferrara, Ferrara, Italy \and
+           Department of Physics and Astronomy, University of Sheffield, Sheffield, United Kingdom \and
+           Physics Department, Brookhaven National Laboratory, Upton, NY, USA \and
+           Centre de Calcul de l'IN2P3 du CNRS, Lyon, France \and
+%           Laboratoire d'Annecy de Physique des Particules (LAPP) and CNRS/IN2P3, Annecy, France \and
+           Centro de Investigaciones Energ\'eticas Medioambientales y Tecnol\'ogicas (CIEMAT), Madrid, Spain \and
+           LAL, Universit\'e Paris-Sud and CNRS/IN2P3, Orsay, France \and
+           Deutsches Elektronen-Synchrotron, Hamburg, Germany \and
+           Princeton University, Princeton, NJ, USA \and
+           INFN Sezione di Padova, Universit\`a di Padova, Padova, Italy \and
+           SUPA - School of Physics and Astronomy, University of Glasgow, Glasgow, United Kingdom \and
+           STFC Rutherford Appleton Laboratory, Didcot, United Kingdom \and
+           Laboratoire Leprince-Ringuet, Ecole Polytechnique, CNRS/IN2P3, Universit\'e Paris-Saclay, Palaiseau, France \and
+           Lunds Universitet, Fysiska Institutionen, Avdelningen f\"or Experimentell H\"ogenergifysik, Box 118, 221 00 Lund, Sweden \and
+           University of California, San Diego, La Jolla, CA, USA
+          }
+
+
+\abstract{The increase in the scale of LHC computing during Run 3
+  and Run 4 (HL-LHC) will certainly require radical changes to the
+  computing models and the data processing of the LHC experiments. The
+  working group established by WLCG and the HEP Software Foundation to
+  investigate all aspects of the cost of computing and how to optimise
+  them has continued producing results and improving our understanding
+  of this process. In particular, experiments have developed more
+  sophisticated ways to calculate their resource needs, we have a much
+  more detailed process to calculate infrastructure costs. This
+  includes studies on the impact of HPC and GPU based resources on
+  meeting the computing demands. We have also developed and perfected
+  tools to quantitatively study the performance of experiments
+  workloads and we are actively collaborating with other activities
+  related to data access, benchmarking and technology cost
+  evolution. In this contribution we expose our recent developments
+  and results and outline the directions of future work.}
+
+%
+\maketitle
+%
+\input{Introduction}
+
+\input{Performance}
+
+\input{Resources}
+
+\input{Sitecost}
+
+\input{Other}
+
+\input{Conclusions}
+
+\input{Bibliography}
+
+\end{document}
