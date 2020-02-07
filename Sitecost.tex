@@ -12,52 +12,99 @@ that make sense for all sites.
 
 \subsection{\label{sec:sitecost:computing}Computing resource costs}
 
-The first major step of this approach consisted in gathering relevant indicators related to computing resource costs
+The first major step of this approach consisted in gathering relevant indicators related to computing resource and energy costs
 from the biggest data centers partcipating in WLCG.
 
-We first focus on the distributions of CPU, disk and tape cartridge costs for hardwares procured in 2018.
+We first focus on the distributions of CPU, disk and tape cartridge costs for hardwares procured in 2018, as well as the
+local energy costs
 Figure~\ref{fig:sitecost} represents the obtained results and Table~\ref{tab:sitecosts} summarizes the average values
-and deviation across sites. If CPU price is rather homogeneous across sites, the variance
+and deviation across sites. Note that due to the special financial model of Site~F tape storage, we removed its contribution
+from the average tape cartridge cost value and the related standard deviation.
+
+If CPU price is rather homogeneous across sites, the variance
 in storage costs is quite important. This effect is due to a larger diversity of the storage technologies local market,
 and unlike CPU, the performance is not benchmarked and remains harder to compare across sites.
 
 In addition to the 2018 purchase costs, we established the evolution of the purchase cost over the years, per site,
 although not all sites could provide relevant data. It is clear that CPU price evolution is not as fast as expected: all
-sites oberve a slow down in CPU price evolution trend, which remains far below $-20 \%$ per year.
-For disk storage, the picture is rather coherent and many sites
+sites oberve a slow down in CPU price evolution trend, which remains below $-20 \%$ per year in absolute value.
+Concerning disk storage, the picture is rather coherent and many sites
 observed an price evolution of about $-15 \%$ per year.
-Draw any conclusion from tape storage cost trend is quite difficult:
+In the case of tape storage, draw any conclusion from the observe cost trends across sites is quite difficult:
 an important change in the tape and libraries market has been taking place recently, and every site is in a different
 situation: we will probably stay on average below the $-20 \%$ per year for some time.
 
+\begin{figure}[h]
+    \subfloat[CPU]{\includegraphics[width = 0.5\textwidth]{CPU_cost.png}}
+    \subfloat[Disk]{\includegraphics[width = 0.5\textwidth]{Disk_cost.png}} \\
+    \subfloat[Tape cartridges]{\includegraphics[width = 0.5\textwidth]{Tape_cost.png}}
+    \subfloat[Energy]{\includegraphics[width = 0.5\textwidth]{Power_price.png}}
+    \caption{Add your own figures before compiling}
+    \label{fig:sitecost}
+\end{figure}
 
 \begin{table}[h]
     \centering
     \caption{Site costs summary (as of 2018) and evolution over the previous years.}
     \label{tab:sitecosts}
-    \begin{tabular}{l|rrr}
+    \begin{tabular}{l|cccc}
         \hline
-        resource & CPU & disk & cartridge \\\hline
-        average purchase cost & 10.3 \euro/HS06 & 126.5 \euro/TB & 12.8 \euro/TB \\\hline
-        deviation & 26 \% & 51 \% & 57 \% \\\hline
-        average trend & -12 \%/y & -15 \%/y & -14 \%/y \\\hline
-        deviation & 37 \% & 20 \% & 43 \%\\\hline
+        resource & CPU & disk & cartridge & energy \\\hline
+        average purchase cost & 10.3 \euro/HS06 & 126.5 \euro/TB & 12.8 \euro/TB & 0.1 \euro/kWh\\\hline
+        standard deviation & 26 \% & 51 \% & 57 \% & 54 \% \\\hline
+        average trend & -12 \%/y & -15 \%/y & -14 \%/y & n/a \\\hline
+        standard deviation & 37 \% & 20 \% & 43 \% & n/a \\\hline
     \end{tabular}
 \end{table}
 
-\begin{figure}
-    \subfloat[CPU]{\includegraphics[width = 0.33\textwidth]{CPU_cost.png}}
-    \subfloat[Disk]{\includegraphics[width = 0.33\textwidth]{Disk_cost.png}}
-    \subfloat[Tape cartridges]{\includegraphics[width =0.33\textwidth]{Tape_cost.png}}
-    \caption{Add your own figures before compiling}
-    \label{fig:sitecost}
+
+This set of results provides some insight on the current situation in sites, concerning the procurement of resources and
+the homogeneity of results. The trends oberved over the last years permit to make a rough guess on what prices may become
+in the next years. However, due to the dispersion of the observed trends across sites, it doesn't seem reasonable to
+try to make predictions for many years ahead: the farther, the most uncertain.
+From the calculation, in both cases IT expenses contribute to most of the atomic TCO, at a level of 70-90~\%.
+
+\subsection{\label{sec:sitecost:tco}TCO}
+
+In this section we address the total cost of ownership (TCO) of a data center.
+There is no simple and standard way to calculate a data center TCO, so we use here two different methods which we call
+``atomic'' and ``holistic'' TCOs, based on opposite approaches.
+
+The atomic TCO approach is inspired from the CERN procurement model; it calculate every component needed to build up
+a rack with servers, PDUs, switches, uplinks, router, building etc. in association with their respective expenses and lifetime.
+The required energy expenses are included, and the human effort expenses to operate a service are also calculated
+based on staff expertise and estimated time need to operate a service.
+The results are summarized in Figure~\ref{fig:tco:atomic}.
+
+\begin{figure}[h]
+    \subfloat[CPU]{\includegraphics[width = 0.5\textwidth]{atomic_tco_cpu.png}}
+    \subfloat[Storage]{\includegraphics[width = 0.5\textwidth]{atomic_tco_disk.png}}
+    \caption{Atomic TCO.}
+    \label{fig:tco:atomic}
 \end{figure}
 
 
 
-\subsection{\label{sec:sitecost:energy}Energy}
+The holistic TCO simply consists in taking the average yearly budget spent by a data center.
+By definition this includes every expense, those of the atomic TCO plus other sources of expenses, like a tape system,
+facility maintenance, developers, project managers, support, administrative staff etc.
+In this approach, major expenses that take place occasionally
+are distributed over the years according to their expected amortization period.
+The calculation of the holistic TCO results is a drastically different picture,
+where IT contributes to 30~\% of the budget, the facility about 20 \%, and half of the budget is invested in manpower.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[height=5cm]{holistic_tco.png}
+    \caption{Holistic TCO.}
+    \label{fig:tco:holistic}
+\end{figure}
 
 
-\subsection{\label{sec:sitecost:tco}TCO}As a second step, we tried to estimate the total cost of ownership (TCO) of two typical data centers and classify the relative
-weight of the various contributions to it
+The difference in the results is mainly explained by the fact that the two considered TCO calculations do not address
+the same aspects, especially concerning human effort. Whereas the holistic TCO provides an insight on the breakdown
+of expenses in one of the main WLCG data centers, the atomic TCO is probably more suited to compute marginal costs when
+providing an additional computing or disk-based storage service.
+
+
 
