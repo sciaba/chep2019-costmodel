@@ -1,37 +1,47 @@
 \section{Site cost estimation}
 
-In order to estimate the feasibilty of possible computing models in the future of LHC, some understanding
-of computing resources costs is necessary, at a global scale.
-This requires an analysis of what computing expenses are today and what they are likely to be in the coming years, based on
-what we have been observing over the last years.
-The main difficulty lies in the fact that various academic data centers (``sites'') contribute to WLCG, they belong
-to different nations with different resource types and costs, different service levels, funding models,
-strategies, energy providers and so on. This study aims to understand these differences and provide a set of indicators
+In order to estimate the feasibility of possible computing models in
+the future of LHC, some understanding of computing resources costs is
+necessary, at a global scale.  This requires an analysis of what
+computing expenses are today and what they are likely to be in the
+coming years, based on what we have been observing over the last
+years.  The main difficulty lies in the fact that various academic
+data centers (``sites'') contribute to WLCG, they belong to different
+nations with different resource types and costs, different service
+levels, funding models, strategies, energy providers and so on. We
+tried to understand these differences and provide a set of indicators
 that make sense for all sites.
 
-
 \subsection{\label{sec:sitecost:computing}Computing resource costs}
+The first major step of this approach consisted in gathering relevant
+indicators related to computing resource and energy costs from the
+biggest data centers partcipating in WLCG.  We first focused on the
+distributions of CPU, disk and tape cartridge costs for hardware
+procured in 2018, as well as the local energy costs.
+Figure~\ref{fig:sitecost} represents the anonymized results and
+Table~\ref{tab:sitecosts} summarizes the average values and deviation
+across sites. Note that due to the special financial model of Site~``F''
+tape storage, we removed its contribution from the average tape
+cartridge cost value and its standard deviation.
 
-The first major step of this approach consisted in gathering relevant indicators related to computing resource and energy costs
-from the biggest data centers partcipating in WLCG.
-We first focus on the distributions of CPU, disk and tape cartridge costs for hardwares procured in 2018, as well as the
-local energy costs.
-Figure~\ref{fig:sitecost} represents the obtained results and Table~\ref{tab:sitecosts} summarizes the average values
-and deviation across sites. Note that due to the special financial model of Site~F tape storage, we removed its contribution
-from the average tape cartridge cost value and its standard deviation.
+If CPU price is rather homogeneous across sites, the variance in
+storage costs is quite important. This effect is due to a larger
+diversity in the local storage technology market, and unlike CPU, the
+performance is not benchmarked and remains harder to compare across
+sites.
 
-If CPU price is rather homogeneous across sites, the variance
-in storage costs is quite important. This effect is due to a larger diversity of the storage technologies local market,
-and unlike CPU, the performance is not benchmarked and remains harder to compare across sites.
-
-In addition to the 2018 purchase costs, we established the evolution of the purchase costs over the years, per site,
-although not all sites could provide relevant data. It is clear that CPU price evolution is not as fast as expected: all
-sites oberve a slow down in CPU price evolution trend, which remains below $-20 \%$ per year in absolute value.
-Concerning disk storage, the picture is rather coherent and many sites
-observed a price evolution of about $-15 \%$ per year.
-In the case of tape storage, draw any conclusion from the observe cost trends across sites is quite difficult:
-an important change in the tape and libraries market has been taking place recently, and every site is in a different
-situation: we will probably stay on average below the $-20 \%$ per year for some time.
+In addition to the 2018 purchase costs, we established the evolution
+of the purchase costs over the years, per site, although not all sites
+could provide relevant data. It is clear that CPU price evolution is
+not as fast as expected: all sites oberve a slow down in CPU price
+evolution trend, which remains below $-20 \%$ per year in absolute
+value.  Concerning disk storage, the picture is rather coherent and
+many sites observed a price evolution of about $-15 \%$ per year.  In
+the case of tape storage, it is difficult to draw any conclusion from
+the observed cost trends across sites: an important change in the tape
+and libraries market has been taking place recently, and every site is
+in a different situation: we will probably stay on average below the
+$-20 \%$ per year for some time.
 
 \begin{figure}[h]
     \subfloat[CPU]{\includegraphics[width = 0.5\textwidth]{CPU_cost.png}}
@@ -57,10 +67,12 @@ situation: we will probably stay on average below the $-20 \%$ per year for some
 \end{table}
 
 
-This set of results provides some insight on the current situation in sites with resource procurement expenses, and
-the homogeneity of the various results. The trends observed over the last years permit to make a rough guess on what prices may become
-in the next years. However, due to the dispersion of the observed trends across sites, it doesn't seem reasonable to
-try to make predictions for many years ahead: the farther, the most uncertain.
+This set of results provides some insight on the current situation
+with respect to resource procurement expenses and their
+homogeneity. The trends observed over the last years allow to make a
+rough guess on what prices may become in the next years. However, due
+to the dispersion of the observed trends across sites, it does not seem
+reasonable to try to make predictions for many years ahead.
 
 \subsection{\label{sec:sitecost:tco}TCO}
 
