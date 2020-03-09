@@ -36,24 +36,24 @@ a practical procedure to map the capacity of an HPC resource to a WLCG
 The first step consists in running at a small scale an eligible
 workload $A_1$ for a certain time on a certain number of cores and
 accelerators (not shared with other workloads) and measure the amount
-of $T_{CPU}$ cores$\cdot$s and $T_{acc}$ accelerators$\cdot$s needed
-to process one event. Subsequently, the same workload is run on a
-``traditional'' system and the amount of HS06$\cdot$s to process one
-event is measured~\cite{hs06}. By equating the computing resource
-usages in the two cases, one can translate a given WLCG pledge to a
-certain amount of processing time on a given HPC resource. In reality,
-one will have to take into account also bottleneck effects, for
-example when the accelerator is underutilized and the CPU is the
-limiting factor. It is important to know that this equivalence is in
-principle different for each workload, as each one may use differently
-the resources, and different for each HPC system, potentially leading
-to a very large number of combinations; in practice, we can expect
-only a handful of systems to be used on the few workloads that can use
-them more efficiently.
+of CPU time $T_{CPU}$ (cores$\cdot$s) and accelerator time $T_{acc}$
+(accelerators$\cdot$s) needed to process one event. Subsequently, the
+same workload is run on a ``traditional'' system and the amount of
+HS06$\cdot$s~\cite{hs06} to process one event is measured. By equating
+the computing resource usages in the two cases, one can translate a
+given WLCG pledge to a certain amount of processing time on a given
+HPC resource. In reality, one will have to take into account also
+bottleneck effects, for example when the accelerator is underutilized
+and the CPU is the limiting factor. It is important to know that this
+equivalence is in principle different for each workload, as each one
+may use differently the resources, and different for each HPC system,
+potentially leading to a very large number of combinations; in
+practice, we can expect only a handful of systems to be used on the
+few workloads that can use them most efficiently.
 
 Another important metric to be defined would be a measure of how
-``well'' one is exploiting an HPC resource, that we could call
-\emph{realised potential}. A possibility is to use as reference the
+``well'' we are exploiting an HPC resource, that we could call
+\emph{realized potential}. A possibility is to use as reference the
 $R_{max}$ FLOPS measured by LINPACK to express the
 maximum achievable performance of the HPC system; integrating it over
 the length of the time allocation, it produces a certain amount of
@@ -70,4 +70,5 @@ In reality, experience shows that running on an HPC resource usually
 needs a considerable amount of preparation, which is not taken into
 account in the metrics defined above. It is also clear that, at this
 time, very limited use can be done (if any) of non-CPU resources for
-production workloads; however, this is going to change.
+production workloads; however, this is going to change, as more HEP
+workloads become able to utilize GPUs.
