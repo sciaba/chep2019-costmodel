@@ -1,8 +1,8 @@
 \section{Other improvements}
-A very promising work has started, to study the impact of site caches
-on the cost of computing for smaller sites. The idea
-behind it is the consolidation of managed storage at a few large sites
-forming ``data lakes'', and its replacement with storage caches
+A very promising work has started, to study the impact of storage
+caches on the cost of computing for smaller sites. The idea behind it
+is the consolidation of managed storage at a few large sites forming
+``data lakes'', and its replacement with storage caches
 elsewhere. This would bring several advantages: lessen the need to
 create long-lived replicas of datasets (simpler data management),
 reduce the amount of ``cold data'' (less storage used), replace
@@ -33,7 +33,7 @@ by the cost model and the HEPiX benchmarking working groups, to define
 a practical procedure to map the capacity of an HPC resource to a WLCG
 ``pledge'', briefly described here.
 
-The first step consists in running at a small scale an eligible
+The first step consists of running at a small scale an eligible
 workload $A_1$ for a certain time on a certain number of cores and
 accelerators (not shared with other workloads) and measure the amount
 of CPU time $T_{CPU}$ (cores$\cdot$s) and accelerator time $T_{acc}$
