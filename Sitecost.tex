@@ -5,11 +5,11 @@ the future of LHC, some understanding of computing resources costs is
 necessary, at a global scale.  This requires an analysis of what
 computing expenses are today and what they are likely to be in the
 coming years, based on what we have been observing over the last
-years.  The main difficulty lies in the fact that various academic
-data centers (``sites'') contribute to WLCG, they belong to different
-nations with different resource types and costs, different service
-levels, funding models, strategies, energy providers and so on. We
-tried to understand these differences and provide a set of indicators
+years.  The main difficulty being that WLCG is composed of various academic
+data centers (``sites''), which provide different types of hardware resources and procure
+them at different prices, they provide different levels of service, they belong
+to different nations with they own particularities (funding model, strategy, energy providers and so on).
+We tried to estimate and understand the origin of these heterogeneities and provide a set of indicators
 that make sense for all sites.
 
 \subsection{\label{sec:sitecost:computing}Computing resource costs}
@@ -28,7 +28,10 @@ If CPU price is rather homogeneous across sites, the variance in
 storage costs is quite important. This effect is due to a larger
 diversity in the local storage technology market, and unlike CPU, the
 performance is not benchmarked and remains harder to compare across
-sites.
+sites. Therefore, we believe important to stress that despite the
+cost calculation rule is similar for all sites, the local context,
+market, and technology choices are the most important contribution
+to the cost differences.
 
 In addition to the 2018 purchase costs, we established the evolution
 of the purchase costs over the years, per site, although not all sites
@@ -74,7 +77,7 @@ rough guess on what prices may become in the next years. However, due
 to the dispersion of the observed trends across sites, it does not seem
 reasonable to try to make predictions for many years ahead.
 
-\subsection{\label{sec:sitecost:tco}TCO}
+\subsection{\label{sec:sitecost:tco}Total Cost of Ownership}
 
 In this section we address the total cost of ownership (TCO) of a data
 center.  There is no simple and standard way to calculate a data
@@ -103,8 +106,8 @@ expenses contribute to most of the atomic TCO, at a level of 70-90~\%.
 
 The holistic TCO simply consists in taking the average yearly budget
 spent by a data center.  By definition this includes every expense,
-those of the atomic TCO plus other sources of expenses, like a tape
-system, facility maintenance, developers, project managers, support,
+those of the atomic TCO plus other sources of expenses, such as tape
+system libraries, facility maintenance, developers, project managers, support,
 administrative staff etc.  In this approach, major expenses that take
 place occasionally are distributed over the years according to their
 expected amortization period.  The calculation of the holistic TCO
